@@ -1,0 +1,1 @@
+create table emp8 select * from emp6 where 1=0;
