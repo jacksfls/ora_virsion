@@ -4,7 +4,7 @@
 #env
 
 #schema
-username=`head -n 1 test.sql|awk -F"[=]" '{print $2}'`
+username=`head -n 1 apply.sql|awk -F"[=]" '{print $2}'`
 
 
 #schema
