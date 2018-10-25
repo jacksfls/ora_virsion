@@ -112,10 +112,9 @@ case "$1" in
 		ls -1 /docker-entrypoint-initdb.d/*.sql 2> /dev/null | xargs md5sum >> /docker-entrypoint-initdb.d/.cache
 		ls -1 /docker-entrypoint-initdb.d/*.dmp 2> /dev/null | xargs md5sum >> /docker-entrypoint-initdb.d/.cache
                 
-                su oracle -c "NLS_LANG=.$CHARACTER_SET $ORACLE_HOME/bin/sqlplus -S / as sysdba @/game.sql"
 		echo "Import finished"
 		echo
-                
+                /apply_sch.sh                
 		echo "Database ready to use. Enjoy! ;)"
 
 		##
